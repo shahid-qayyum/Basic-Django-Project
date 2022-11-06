@@ -1,0 +1,38 @@
+{% extends 'PetAdoption/base.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <main >
+    <div class="container wow fadeIn">
+      <h2 class="my-5 h2 text-center">Checkout form</h2>
+      <div class="row">
+        <div class="col-md-10 mb-4">
+          <div class="card" style="margin-left:250px;">
+            <form method="POST" class="card-body" style="margin-top:30px; margin-left:200px;">
+              {% csrf_token %}
+
+              <h4>Shipping address</h4>
+
+              <div class='hideable_shipping_form'>
+                {{form|crispy}}
+              </div>
+
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg"  type="submit">Check Out</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+       
+      </div>
+
+    </div>
+  </main>
+
+{% endblock content %}
+
+

@@ -1,0 +1,117 @@
+{% extends 'PetAdoption/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="intro" id="hero" style="background-image:url('{% static "img/img02.jpg" %}');">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="content">
+            <h1>Adopt <br>
+               <span>The <br> Perfect Pet</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="in-btn">
+      <div class="row"style="height:70px;">
+        <form class="search-form" style="width:100%; height:10vh;" action="{% url 'search' %}" method="POST">
+          {% csrf_token %}
+          <div class="input-group" style="height:10vh;">
+              <input type="text" class="form-control srch" style="height:70px; margin-top:15px" placeholder="Enter name, pet breed"  aria-label="Recipient's username" aria-describedby="basic-addon2" name="searched">
+              <div class="input-group-append" >
+                <button class="btn" style="height:70px;margin-top:15px;" name="btn1" type="submit">Find a dog</button>
+                <button class="btn" style="height:70px;margin-top:15px;" name="btn2" type="submit">Find a cat</button>
+              </div>
+            </div>
+          </form>
+      </div>
+  </div>
+
+<section id="in-card">
+  <div class="content" style="display: flex; flex-wrap: wrap;">
+    <div class="in-heading" style="text-align: center; width: 100%;">
+      <h2>PETS AVAILABLE FOR ADOPTION NEARBY</h2>
+    </div>
+   <div class="row" style=" display: flex; flex-wrap: wrap; justify-content: space-evenly; height: 0%; margin-bottom: 20px;">
+    {% for dog in dogs %}
+     <div class="dogs" >
+       <div class="in-card">
+         <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ dog.img.url}}" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">{{dog.breed}}</h5>
+         
+             <a href="{{dog.get_absolute_url}}" class="btn btn-primary">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+      
+      <div class="card" style="width: 18rem; background-color: blue; border-radius: 20px;">
+        
+        <div class="card-body">
+          <h2 class="card-title">More dogs <br>are also <br> available</h2>
+         
+          <a href="{% url 'dogs'%}" type="Button" style="color: #2E0152; margin-top: 80px; font-size: small; font-family: Arial, Helvetica, sans-serif;text-decoration: none;width: 100%;margin-left: 5px; text-transform: uppercase; text-align: center;">Get More</a>
+        </div>
+      </div>
+  
+    </div> 
+    <div class="row" style=" display: flex; flex-wrap: wrap; justify-content: space-evenly;height: 0%; margin-bottom: 40px;"> 
+    {% for cat in cats %}
+    <div class="cats">
+     <div class="in-card" >
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ cat.img.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{cat.breed}}</h5>
+         
+          <a href="{{cat.get_absolute_url}}" class="btn btn-primary">Adopt Me</a>
+        </div>
+      </div>
+     </div>
+    </div>
+    {% endfor %}
+      <div class="card" style="width: 18rem; background-color: blue; border-radius: 20px;">
+        
+        <div class="card-body">
+          <h2 class="card-title">More cats <br>are also <br> available</h2>
+         
+          <a href="{% url 'cats' %}" type="Button" style="color:#2E0152; margin-top: 80px; font-size:small;font-family: Arial, Helvetica, sans-serif;width: 100%;text-align: center; text-transform: uppercase; text-decoration: none; margin-left: 5px;">Get More</a>
+        </div>
+      </div>
+   </div>
+  </div>
+</section>
+<section id="story">
+  <div class="heading">
+    <h1>ADOPTION ARTICLES</h1>
+  </div>
+  <div class="story-content">
+    <div class="card" style="width: 38rem;">
+      <img class="card-img-top" src="{% static 'img/girl-with-dog.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Dog adoption stories</h5>
+       <p>Learn more about caring for your new dog</p>
+       <a href="{% url 'article' %}" class="btn">READ ME</a>
+      </div>
+    </div>
+    <div class="card" style="width: 38rem;">
+      <img class="card-img-top" src="{% static 'img/man-with-cat.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Cat adoption stories</h5>
+       <p>Learn more about caring for your new cat</p>
+       <a href="{% url 'article' %}" class="btn">READ ME</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+{% endblock %}

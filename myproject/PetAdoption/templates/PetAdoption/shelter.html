@@ -1,0 +1,21 @@
+{% extends 'PetAdoption/base.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/shelter.css'%}">
+  <h2>ALL SHELTERS</h2>
+  <div class="container-fluid">
+ {% for shelter in shelters %}
+     <div class="shelter">
+         <h5>{{shelter.name}}</h4>
+         <p>Total Dogs:  {{shelter.total_dog}}</p>
+         <p>Total Cats:  {{shelter.total_cat}}</p>
+         <p>Total Workers:  {{shelter.workers}}</p>
+         <p>City:  {{shelter.city}}</p>
+     </div>
+    
+  {% endfor %}
+  </div>
+{% endblock %}

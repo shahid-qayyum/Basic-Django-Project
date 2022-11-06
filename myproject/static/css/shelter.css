@@ -1,0 +1,23 @@
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.shelter{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.shelter h5{
+    margin-bottom: 20px;
+}
+.shelter p{
+    margin-top: 0%;
+}
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    color: #2E0152;
+    
+}

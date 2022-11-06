@@ -1,0 +1,34 @@
+#det .m-heading{
+    margin-top: 100px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #2E0152;
+  }
+  #det .det-img img{
+    width: 700px;
+    height: 80vh;
+    margin-left: 0%;
+  }
+  #det .details h2{
+    margin-top: 10px;
+    margin-bottom: 60px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  #det .details h5{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  
+  }
+  #det .details button{
+    margin-top: 40px;
+    margin-left: 100px;
+    width: 250px;
+    height: 60px;
+    border-radius: 50px;
+    background-color:#2E0152;
+    color: white;
+    border: none;
+  }

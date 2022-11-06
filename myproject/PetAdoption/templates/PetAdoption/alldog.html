@@ -1,0 +1,24 @@
+{% extends 'PetAdoption/base.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/dog.css'%}">
+  <h2>All Dogs</h2>
+  <div class="container-fluid">
+ {% for dog in dogs %}
+  
+    <div class="in-card">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ dog.img.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{dog.breed}}</h5>
+           
+            <a href="{{dog.get_absolute_url}}" class="btn btn-primary">Adopt Me</a>
+          </div>
+        </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}

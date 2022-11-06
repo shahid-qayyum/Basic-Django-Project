@@ -1,0 +1,40 @@
+.container-fluid{
+    margin-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  h2{
+      text-align: center;
+      color: #2E0152;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-decoration: #2E0152;
+      margin-top: 70px;
+      margin-bottom: 40px;
+  }
+  .in-card{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .card{
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .card img{
+    height: 250px;
+  }
+  .card-body h5{
+       text-align: center;
+       margin-top: 10px;
+       color: #2E0152;
+  }
+  .card-body a{
+    margin-left: 4.5rem;
+    margin-top: 5px;
+  }
+  .card-body h2{
+    color: white;
+    margin-top: 100px;
+    text-align: center;
+  }

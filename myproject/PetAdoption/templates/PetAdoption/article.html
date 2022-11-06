@@ -1,0 +1,21 @@
+{% extends 'PetAdoption/base.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/article.css'%}">
+  <h2>Pets Articles</h2>
+  <div class="container-fluid">
+ {% for article in articles %}
+    <div class="article">
+        <h3>{{article.tittle}}</h3>
+        <h6>{{article.intro}}</h6>
+        <p>{{article.description | safe | truncatewords:"50" | linebreaks}}
+        <a href={{url_for_full_content}}> read more</a>
+        </p>
+    </div>  
+
+  {% endfor %}
+  </div>
+{% endblock %}

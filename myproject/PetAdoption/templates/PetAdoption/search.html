@@ -1,0 +1,32 @@
+{% extends 'PetAdoption/base.html'%}
+{% load static %}
+
+
+
+{% block content %}
+
+{% if searched %}
+  
+   <link rel="stylesheet" href="{% static 'css/dog.css'%}">
+   <h2>You searched for {{searched}}</h2>
+   <div class="container-fluid">
+   {% for pet in pets %}
+     <div class="in-card">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ pet.img.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{pet.breed}}</h5>
+           
+            <a href="{{pet.get_absolute_url}}" class="btn btn-primary">Adopt Me</a>
+          </div>
+        </div>
+     </div>
+   {% endfor %}
+    </div>
+
+
+{% else %}
+    <h3>NO results found</h3>
+
+{% endif %}
+{% endblock %}
